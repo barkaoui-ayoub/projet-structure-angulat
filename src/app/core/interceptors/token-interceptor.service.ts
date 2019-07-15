@@ -8,7 +8,6 @@ import { Observable } from 'rxjs';
 })
 export class TokenInterceptorService implements HttpInterceptor {
 
-
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     let tokenReq = req.clone({
