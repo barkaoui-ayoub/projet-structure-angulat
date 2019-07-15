@@ -31,5 +31,4 @@ export class AuthService {
     return token === "12345"; 
   }
 
-  
 }
