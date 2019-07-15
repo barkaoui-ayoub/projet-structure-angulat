@@ -10,6 +10,7 @@ import { AuthModule } from './modules/auth/auth.module';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import { AuthGuardService } from './core/guards/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component
     CoreModule,
     SharedModule    
   ],
-  providers: [],
+  providers: [AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
