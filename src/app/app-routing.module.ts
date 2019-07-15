@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './modules/auth/pages/login/login.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import { AuthGuardService } from './core/guards/auth-guard.service';
 
 
 const routes: Routes = [
@@ -12,9 +13,14 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path:'dashboard',
-    loadChildren: () =>
-    import('./modules/home/home.module').then(m => m.HomeModule)
+    path:'',
+    canActivate: [AuthGuardService],
+    children: [
+      {
+        path: 'dashboard',
+        loadChildren:() => import('./modules/home/home.module').then(m => m.HomeModule)
+      }
+    ]
   },
   {
     path: 'auth',
