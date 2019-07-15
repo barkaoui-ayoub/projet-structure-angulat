@@ -31,4 +31,8 @@ export class AuthService {
     return token === "12345"; 
   }
 
+  public getToken(){
+    return localStorage.getItem('token');
+  }
+
 }

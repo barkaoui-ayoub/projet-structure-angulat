@@ -27,7 +27,7 @@ import { AuthGuardService } from './core/guards/auth-guard.service';
     CoreModule,
     SharedModule    
   ],
-  providers: [AuthGuardService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
