@@ -13,7 +13,7 @@ export class HomePageComponent implements OnInit {
   constructor(private auth: AuthService) { }
 
   ngOnInit() {
-    this.initChiffrement();
+    //this.initChiffrement();
   }
 
 
